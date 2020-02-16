@@ -4,12 +4,19 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".recycler">
-    <androidx.recyclerview.widget.RecyclerView
+    tools:context=".googlemap">
+    <Button
+        android:layout_width="150dp"
+        android:id="@+id/mapbtn"
+        android:text="view nearby crime incidents"
+        android:background="#FF0000"
+        android:textColor="#FFFFFF"
+        android:layout_height="50dp" />
+    <fragment
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:id="@+id/newrecycler">
+        android:id="@+id/mapAPI"
+        android:name="com.google.android.gms.maps.SupportMapFragment"/>
 
-    </androidx.recyclerview.widget.RecyclerView>
 
 </RelativeLayout>

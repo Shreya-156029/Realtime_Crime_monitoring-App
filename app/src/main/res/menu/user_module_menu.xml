@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:title="view profile"
+        android:id="@+id/view_pro">
+    </item>
+    <item android:title="Update profile"
+        android:id="@+id/update_profile">
+
+
+
+    </item>
+    <item android:title="About us"
+        android:id="@+id/aboutus">
+
+    </item>
+    <item android:title="Help"
+        android:id="@+id/help">
+
+    </item>
+
+
+</menu>

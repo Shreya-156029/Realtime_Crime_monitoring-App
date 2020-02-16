@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">Real_Time_crime_monitoring</string>
+    <string-array name="crime_incidents">
+        <item>--select--</item>
+        <item>Robbery</item>
+        <item>Fire</item>
+        <item>Shooting</item>
+
+    </string-array>
+
+    <string name="twitterUsername">\@joeytribbiani</string>
+
+</resources>
