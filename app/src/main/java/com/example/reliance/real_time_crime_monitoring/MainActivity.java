@@ -41,9 +41,9 @@ public class MainActivity extends AppCompatActivity {
     public static final String mystr = "New notification";
 
     private Button btn1, btn2, btn3, btn4;
-    FirebaseDatabase firebaseDatabase;
-    DatabaseReference ref1;
-    private FusedLocationProviderClient client;
+//    FirebaseDatabase firebaseDatabase;
+//    DatabaseReference ref1;
+//    private FusedLocationProviderClient client;
 
 
 
@@ -64,8 +64,8 @@ public class MainActivity extends AppCompatActivity {
         btn2 = (Button) findViewById(R.id.hitmap);
         btn3 = (Button) findViewById(R.id.view_posts);
         btn4 = (Button) findViewById(R.id.getlocationbtn);
-        firebaseDatabase=FirebaseDatabase.getInstance(); //new
-        ref1=firebaseDatabase.getReference().child("Crime_type_desc");
+//        firebaseDatabase=FirebaseDatabase.getInstance(); //new
+//        ref1=firebaseDatabase.getReference().child("Crime_type_desc");
 
 
         btn1.setOnClickListener(new View.OnClickListener() {
@@ -80,6 +80,7 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 Intent intent = new Intent(MainActivity.this, googlemap.class);
                 startActivity(intent);
+                displaynotification();
             }
         });
         btn3.setOnClickListener(new View.OnClickListener() {
@@ -87,41 +88,9 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 Intent intent = new Intent(MainActivity.this, recycler.class);
                 startActivity(intent);
+
             }
         });
-        btn4.setOnClickListener(new View.OnClickListener()
-        {
-            @Override
-            public void onClick(View v)
-            {
-                if (ActivityCompat.checkSelfPermission(MainActivity.this,Manifest.permission.ACCESS_FINE_LOCATION)!=PackageManager.PERMISSION_GRANTED)
-                {
-                    // TODO: Consider calling
-                    //    Activity#requestPermissions
-                    // here to request the missing permissions, and then overriding
-                    //   public void onRequestPermissionsResult(int requestCode, String[] permissions,
-                    //                                          int[] grantResults)
-                    // to handle the case where the user grants the permission. See the documentation
-                    // for Activity#requestPermissions for more details.
-                    return;
-                }
-                client.getLastLocation().addOnSuccessListener(new OnSuccessListener<Location>()
-                {
-                    @Override
-                    public void onSuccess(Location location)
-                    {
-
-                        if(location!=null)
-                        {
-                            String out=location.toString();
-                            Toast.makeText(MainActivity.this,out,Toast.LENGTH_LONG).show();
-                        }
-
-                    }
-                });
-            }
-        });
-//        displaynotification();
 
 
     }
@@ -136,6 +105,7 @@ public class MainActivity extends AppCompatActivity {
         if (keyCode == KeyEvent.KEYCODE_VOLUME_UP)
         {
             Toast.makeText(MainActivity.this,"Up working",Toast.LENGTH_SHORT).show();
+            displaynotification();
             return true;
 
         }
